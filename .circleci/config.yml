@@ -3,12 +3,15 @@ jobs:
   build:
     working_directory: ~/closure-webpack-plugin
     docker:
-      - image: webpackcontrib/circleci-java8-node8:latest
+      - image: webpackcontrib/circleci-node-base:latest
     branches:
       only:
         - master
         - next
         - /.*\/feature.*/
+        - /.*\/refactor.*/
+        - /.*\/test.*/
+        - /.*\/fix.*/
     steps:
       - checkout
       - setup_remote_docker
